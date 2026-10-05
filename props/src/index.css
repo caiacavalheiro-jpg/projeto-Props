@@ -1,0 +1,21 @@
+:root {
+  --bg: #05060a;
+  --card: #0f0f18;
+  --blue-mid: #2c5f8a;
+  --blue: #6ba3d6;
+  --white: #f2f4f8;
+  --dim: #8b95a8;
+  --ok: #5ec48a;
+  --off: #e07a7a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at 50% 0%, rgba(44,95,138,.25), transparent 60%), var(--bg);
+  background-repeat: no-repeat;
+  color: var(--white);
+  min-height: 100vh;
+}
+
