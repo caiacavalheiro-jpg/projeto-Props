@@ -1,0 +1,245 @@
+/* zera o que o index.css do Vite coloca no body e no #root */
+body {
+  background: #05060a;
+  color: #f2f4f8;
+  font-family: Arial, sans-serif;
+  display: block;
+}
+
+#root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-align: left;
+  min-height: 100vh;
+  display: block;
+  background: radial-gradient(circle at 50% 0%, rgba(44, 95, 138, 0.3), transparent 60%);
+  background-repeat: no-repeat;
+}
+
+.pagina {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.pagina h1,
+.pagina h2,
+.pagina h3 {
+  font-family: Arial, sans-serif;
+  color: #f2f4f8;
+  letter-spacing: normal;
+}
+
+.pagina p {
+  color: #8b95a8;
+  line-height: 1.6;
+}
+
+/* titulo */
+.titulo {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.pagina .titulo h1 {
+  font-size: clamp(2.4rem, 8vw, 4rem);
+  font-style: italic;
+  font-weight: 700;
+  margin: 0 0 0.6rem;
+}
+
+/* blocos texto + imagem */
+.bloco {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.bloco.inverso {
+  flex-direction: row-reverse;
+}
+
+.texto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.pagina .texto h2,
+.pagina .produtos h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.imagem {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.imagem img {
+  width: 100%;
+  max-width: 280px;
+  /* troca o roxo da imagem por azul */
+  filter: hue-rotate(-60deg);
+}
+
+.imagem img.logo {
+  filter: none;
+  max-width: 220px;
+}
+
+/* cards do aluno e da nota */
+.aluno,
+.nota,
+.produto {
+  background: #0f0f18;
+  border: 2px solid #2c5f8a;
+  border-radius: 12px;
+  padding: 1.1rem 1.3rem;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.aluno:hover,
+.nota:hover,
+.produto:hover {
+  transform: translateY(-4px);
+  border-color: #6ba3d6;
+}
+
+.aluno {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pagina .aluno h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.pagina .aluno p {
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+}
+
+.inicial {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #6ba3d6;
+  color: #05060a;
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nota {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nota strong {
+  font-size: 1.6rem;
+}
+
+.verde {
+  color: #5ec48a;
+}
+
+.vermelho {
+  color: #e07a7a;
+}
+
+/* produtos */
+.produtos {
+  text-align: center;
+}
+
+.pagina .produtos > p {
+  margin: 0.5rem 0 1.8rem;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  text-align: left;
+}
+
+.produto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pagina .produto h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.pagina .produto p {
+  margin: 0;
+}
+
+.status {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.preco {
+  font-size: 1.5rem;
+  margin-top: 0.3rem;
+}
+
+.produto button {
+  margin-top: 0.6rem;
+  padding: 0.8rem;
+  background: #6ba3d6;
+  color: #05060a;
+  border: 1px solid #6ba3d6;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.produto button:hover:not(:disabled) {
+  background: transparent;
+  color: #6ba3d6;
+  border-color: #6ba3d6;
+}
+
+.produto button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* celular */
+@media (max-width: 800px) {
+  .bloco,
+  .bloco.inverso {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .imagem img {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 560px) {
+  .grade {
+    grid-template-columns: 1fr;
+  }
+}
